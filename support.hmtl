@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Conect EU – Support</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f8f9fb;
+      color: #1a1a1a;
+      margin: 0;
+      padding: 0;
+      line-height: 1.65;
+    }
+
+    .container {
+      max-width: 860px;
+      margin: 40px auto;
+      background: #ffffff;
+      padding: 40px 28px;
+      border-radius: 14px;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.06);
+    }
+
+    h1 {
+      font-size: 32px;
+      margin-bottom: 8px;
+      color: #0f172a;
+    }
+
+    h2 {
+      font-size: 24px;
+      margin-top: 32px;
+      margin-bottom: 14px;
+      color: #111827;
+    }
+
+    h3 {
+      font-size: 18px;
+      margin-top: 26px;
+      margin-bottom: 10px;
+      color: #1f2937;
+    }
+
+    p {
+      margin: 0 0 14px;
+    }
+
+    ul {
+      margin: 0 0 16px 20px;
+      padding: 0;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    .subtitle {
+      color: #4b5563;
+      margin-bottom: 20px;
+    }
+
+    .updated {
+      display: inline-block;
+      background: #eef2ff;
+      color: #3730a3;
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+
+    .contact-box {
+      background: #f3f4f6;
+      border-radius: 12px;
+      padding: 18px;
+      margin-top: 12px;
+    }
+
+    .faq-box {
+      background: #f9fafb;
+      border-radius: 12px;
+      padding: 18px;
+      margin-top: 12px;
+      border: 1px solid #e5e7eb;
+    }
+
+    a {
+      color: #0f766e;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .footer {
+      margin-top: 32px;
+      font-size: 14px;
+      color: #6b7280;
+      border-top: 1px solid #e5e7eb;
+      padding-top: 18px;
+    }
+
+    @media (max-width: 640px) {
+      .container {
+        margin: 16px;
+        padding: 24px 18px;
+      }
+
+      h1 {
+        font-size: 28px;
+      }
+
+      h2 {
+        font-size: 22px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Conect EU</h1>
+    <p class="subtitle">
+      Support information for the Conect EU mobile application
+    </p>
+
+    <div class="updated"><strong>Last updated:</strong> March 2026</div>
+
+    <p>
+      If you need help using Conect EU, want to report an issue, or have questions about your account,
+      you can contact us using the details below.
+    </p>
+
+    <h2>Support</h2>
+
+    <p>
+      For general support, technical issues, or feedback, please contact:
+    </p>
+
+    <div class="contact-box">
+      <a href="mailto:conecto.eu@gmail.com">conecto.eu@gmail.com</a>
+    </div>
+
+    <h2>Frequently Asked Questions</h2>
+
+    <div class="faq-box">
+      <h3>How can I report a listing?</h3>
+      <p>
+        Open the listing details screen for the ride, parcel, or service you want to report,
+        then tap <strong>“Report this listing”</strong>. This will open your email app with a
+        pre-filled report message.
+      </p>
+
+      <h3>How can I delete my account?</h3>
+      <p>
+        Open the <strong>Profile</strong> screen in the app and use the
+        <strong>“Delete Account”</strong> option. The app will guide you through the confirmation steps.
+      </p>
+
+      <h3>How can I send feedback?</h3>
+      <p>
+        In the app, go to <strong>Profile → Help &amp; Feedback</strong> and choose the feedback option,
+        or email us directly using the support address above.
+      </p>
+    </div>
+
+    <div class="footer">
+      © 2026 Conect EU. All rights reserved.
+    </div>
+  </div>
+</body>
+</html>
