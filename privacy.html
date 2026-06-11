@@ -1,3 +1,22 @@
+I did not modify any files.
+
+**Alignment Report**
+
+**Launch blockers**
+- None found after replacing the hosted text with the updated HTML below. The updated wording aligns with the repo’s current `PrivacyInfo.xcprivacy`: linked name/email/phone/user ID/user content, no tracking, and no device-location collection claim.
+
+**Should Fix Before Submission**
+- Current hosted wording should explicitly add: no GPS/device location permission, no background location tracking, no analytics SDK, no cookies, no ads, no IDFA/ATT tracking, and no tracking domains.
+- Current hosted deletion copy says “clear local Realm database”; the app actually clears user-scoped Realm data and local preferences while preserving static/shared data such as place cache.
+- Current in-app delete-account warning copy mentions App Store subscriptions but not Google Play. The hosted policy below covers both; the app copy should be fixed before Android submission.
+- Verify App Store Connect privacy answers include Crashlytics diagnostics if collected, since Crashlytics is active and linked to Firebase UID.
+
+**Nice-To-Have Wording Improvements**
+- Keep vendor retention language cautious for Apple, Google, RevenueCat, Firebase, and Crashlytics.
+- Clarify that billing diagnostics are Crashlytics breadcrumbs, not analytics/advertising tracking.
+- Make public listing/contact visibility explicit for rides, parcels, services, and jobs.
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,7 +50,6 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    /* ── Top accent bar ── */
     body::before {
       content: "";
       display: block;
@@ -39,7 +57,6 @@
       background: linear-gradient(90deg, #3B5BDB 0%, #748FFC 100%);
     }
 
-    /* ── Header ── */
     header {
       max-width: 740px;
       margin: 0 auto;
@@ -86,14 +103,12 @@
       flex-shrink: 0;
     }
 
-    /* ── Main content ── */
     main {
       max-width: 740px;
       margin: 0 auto;
       padding: 0 24px 80px;
     }
 
-    /* ── Sections ── */
     section {
       margin-top: 56px;
       position: relative;
@@ -108,7 +123,6 @@
       overflow: hidden;
     }
 
-    /* Large decorative number */
     .section-inner::before {
       content: attr(data-num);
       position: absolute;
@@ -150,7 +164,6 @@
 
     p:last-child { margin-bottom: 0; }
 
-    /* ── Lists ── */
     ul, ol {
       padding-left: 0;
       list-style: none;
@@ -192,7 +205,6 @@
       text-align: center;
     }
 
-    /* ── Navigation block (Profile → …) ── */
     .nav-path {
       display: inline-block;
       background: var(--accent-light);
@@ -206,7 +218,6 @@
       letter-spacing: 0.01em;
     }
 
-    /* ── Platform blocks (iOS / Android) ── */
     .platform-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -238,7 +249,6 @@
       line-height: 1.5;
     }
 
-    /* ── Warning callout ── */
     .callout {
       background: #FFFBEB;
       border: 1px solid #FCD34D;
@@ -251,7 +261,6 @@
       line-height: 1.6;
     }
 
-    /* ── Contact link ── */
     a {
       color: var(--accent);
       text-decoration: none;
@@ -259,7 +268,6 @@
     }
     a:hover { text-decoration: underline; }
 
-    /* ── Footer ── */
     footer {
       max-width: 740px;
       margin: 0 auto;
@@ -285,7 +293,6 @@
       color: var(--text-muted);
     }
 
-    /* ── Responsive ── */
     @media (max-width: 600px) {
       .section-inner { padding: 24px 20px; }
       .section-inner::before { font-size: 64px; }
@@ -299,7 +306,7 @@
 <header>
   <p class="app-name">Conecto</p>
   <h1>Privacy Policy</h1>
-  <span class="meta">Last updated: June 9, 2026</span>
+  <span class="meta">Last updated: June 11, 2026</span>
 </header>
 
 <main>
@@ -332,11 +339,12 @@
   <section>
     <div class="section-inner" data-num="04">
       <h2>Account and Authentication Information</h2>
-      <p>When you create an account, we may collect:</p>
+      <p>When you create or use an account, we may collect or receive:</p>
       <ul>
         <li>your email address;</li>
-        <li>your display name, if provided;</li>
-        <li>your Firebase user ID;</li>
+        <li>your name or display name, if provided;</li>
+        <li>your phone number, if you choose to provide it as profile, account, or contact information;</li>
+        <li>your Firebase user ID or other internal account identifiers;</li>
         <li>your authentication provider, such as email/password, Google, or Apple;</li>
         <li>account creation and last login timestamps;</li>
         <li>account preferences, such as language and color scheme.</li>
@@ -353,83 +361,60 @@
 
       <h3>Rides</h3>
       <ul>
-        <li>origin city;</li>
-        <li>destination city;</li>
-        <li>intermediate stops;</li>
-        <li>dates and times;</li>
-        <li>trip type;</li>
-        <li>number of seats;</li>
-        <li>luggage size;</li>
-        <li>vehicle type;</li>
-        <li>amenities;</li>
-        <li>price;</li>
-        <li>price policy;</li>
-        <li>cancellation policy;</li>
-        <li>free-text notes.</li>
+        <li>origin, destination, intermediate stops, and route details;</li>
+        <li>dates, times, trip type, recurring days, or specific dates;</li>
+        <li>number of seats, luggage size, vehicle type, amenities, and trailer availability;</li>
+        <li>prices, currency, price policy, and cancellation policy;</li>
+        <li>driver name, company name, contact details, and free-text notes.</li>
       </ul>
 
       <h3>Parcels</h3>
       <ul>
-        <li>origin city;</li>
-        <li>destination city;</li>
-        <li>intermediate cities;</li>
-        <li>dates and times;</li>
-        <li>trip type;</li>
-        <li>price tiers;</li>
-        <li>vehicle type;</li>
-        <li>transport options;</li>
-        <li>free-text notes.</li>
+        <li>origin, destination, intermediate cities, and route details;</li>
+        <li>dates, times, trip type, recurring days, or specific dates;</li>
+        <li>vehicle type and transport options, such as trailer, refrigerated transport, or car transport;</li>
+        <li>base prices, price tiers, currency, and negotiability;</li>
+        <li>driver name, company name, contact details, and free-text notes.</li>
       </ul>
 
       <h3>Services</h3>
       <ul>
-        <li>city;</li>
-        <li>area;</li>
-        <li>country;</li>
-        <li>service category;</li>
-        <li>description;</li>
-        <li>business hours;</li>
-        <li>social links;</li>
-        <li>website links;</li>
-        <li>other service-related details you choose to provide.</li>
+        <li>country, city, area, address, map links, and service location details;</li>
+        <li>service category, service name, description, photos, menu or website links, and business hours;</li>
+        <li>service features, such as mobile service, towing, delivery, takeaway, cuisine, or price level;</li>
+        <li>phone number, email address, WhatsApp, website, and social/profile links.</li>
       </ul>
 
       <h3>Jobs</h3>
       <ul>
-        <li>city;</li>
-        <li>country;</li>
-        <li>job title;</li>
-        <li>category;</li>
-        <li>collaboration type;</li>
-        <li>description;</li>
-        <li>salary information;</li>
-        <li>requirements;</li>
-        <li>experience level;</li>
-        <li>other work-related details you choose to provide.</li>
+        <li>country, city, area, job title, category, and listing mode;</li>
+        <li>description, collaboration type, salary information, requirements, and experience level;</li>
+        <li>work-related details such as accommodation, transport, desired work type, driver license, car availability, or immediate availability;</li>
+        <li>contact name, company name, phone number, WhatsApp number, and email address.</li>
       </ul>
     </div>
   </section>
 
   <section>
     <div class="section-inner" data-num="06">
-      <h2>Contact Information in Listings</h2>
-      <p>You may choose to include contact information in your listings, such as:</p>
+      <h2>Public Listing and Contact Information</h2>
+      <p>When you publish a listing, the listing content may be visible to other users and, where public listing pages or public indexes are available, to visitors who are not signed in.</p>
+      <p>You may choose to include public contact information in your listings, such as:</p>
       <ul>
-        <li>phone number;</li>
-        <li>WhatsApp number;</li>
+        <li>name, contact name, driver name, or company name;</li>
+        <li>phone number or WhatsApp number;</li>
         <li>email address;</li>
-        <li>contact name;</li>
-        <li>driver name;</li>
-        <li>company name.</li>
+        <li>website, menu, map, social media, profile, or similar public links;</li>
+        <li>other public contact details you choose to publish.</li>
       </ul>
-      <p>This information may be visible to other users as part of your public listing. You are responsible for deciding what contact information you include in a listing.</p>
+      <p>This information may be visible as part of your public listing. Please include only information you are comfortable making public.</p>
     </div>
   </section>
 
   <section>
     <div class="section-inner" data-num="07">
       <h2>Favorites, Preferences, and Local Data</h2>
-      <p>Conecto may store your saved listings or favorites so that you can access them again later.</p>
+      <p>Conecto may store your saved listings, favorites, or bookmarks so that you can access them again later. Favorites are app data associated with your account and are not displayed as public listing content.</p>
       <p>We may also store app preferences, such as:</p>
       <ul>
         <li>preferred language;</li>
@@ -453,20 +438,18 @@
         <li>Apple through the Apple App Store on iOS;</li>
         <li>Google through Google Play on Android.</li>
       </ul>
-      <p>Conecto uses RevenueCat to help manage subscription and purchase status.</p>
-      <p>We may receive and store subscription-related information such as:</p>
+      <p>Conecto uses RevenueCat to help manage subscriptions, purchases, promotion entitlement, billing status, purchase restoration, and subscription access.</p>
+      <p>We may receive and store subscription-related or purchase-related information such as:</p>
       <ul>
-        <li>subscription plan;</li>
-        <li>subscription status;</li>
-        <li>product identifier;</li>
-        <li>offering or package identifier;</li>
-        <li>expiration date;</li>
-        <li>trial status, if applicable;</li>
-        <li>renewal status;</li>
+        <li>subscription plan, entitlement, and access status;</li>
+        <li>product identifier, offering identifier, package identifier, or promotion product identifier;</li>
+        <li>purchase identifier, transaction-related identifiers, or purchase date where available;</li>
+        <li>expiration date, trial status, renewal status, cancellation state, or billing issue state;</li>
         <li>store type, such as App Store or Google Play;</li>
-        <li>RevenueCat App User ID.</li>
+        <li>RevenueCat App User ID and related subscription management identifiers;</li>
+        <li>backend access mirror data used to decide which paid features are available.</li>
       </ul>
-      <p>We use this information to determine which paid features you can access and to display your subscription status in the app.</p>
+      <p>We use this information to determine which paid features you can access, verify subscriptions and purchases, manage listing promotions, restore purchases, and display your subscription status in the app.</p>
       <p>We do not receive your full payment card number or full billing details from Apple, Google, or RevenueCat.</p>
     </div>
   </section>
@@ -479,8 +462,8 @@
       <p>Conecto may schedule notifications such as:</p>
       <ul>
         <li>reminders to check new listings;</li>
-        <li>reminders that one of your listings is close to expiring;</li>
-        <li>reminders that a listing promotion is close to ending.</li>
+        <li>reminders for eligible listings that are close to expiring;</li>
+        <li>reminders for eligible listing promotions that are close to ending.</li>
       </ul>
       <p>You can disable notifications from the Profile screen or from your device settings.</p>
     </div>
@@ -489,30 +472,29 @@
   <section>
     <div class="section-inner" data-num="10">
       <h2>Device, Diagnostics, and Technical Information</h2>
-      <p>We use Firebase Crashlytics to help identify and fix crashes and errors.</p>
-      <p>Crashlytics may collect technical information such as:</p>
+      <p>We use Firebase Crashlytics to help identify and fix crashes, non-fatal errors, and stability issues.</p>
+      <p>Crashlytics may collect technical or diagnostic information such as:</p>
       <ul>
-        <li>crash reports;</li>
-        <li>error messages;</li>
-        <li>stack traces;</li>
-        <li>app state related to the error;</li>
-        <li>operation or screen where the error occurred;</li>
-        <li>listing type involved in the error, where applicable;</li>
-        <li>authentication state;</li>
-        <li>Firebase user ID as an internal identifier.</li>
+        <li>crash reports, non-fatal error reports, exception messages, and stack traces;</li>
+        <li>device, operating system, app version, and technical state related to the error;</li>
+        <li>screen, operation, or app area where the error occurred;</li>
+        <li>listing type, entity ID, counts, flags, or other non-content diagnostic metadata where applicable;</li>
+        <li>authentication state and Firebase user ID as an internal account identifier;</li>
+        <li>high-level billing diagnostic breadcrumbs, such as purchase or restore status, used for debugging billing issues.</li>
       </ul>
-      <p>We do not intentionally log names, email addresses, phone numbers, listing text, or free-text user content in crash reports.</p>
-      <p>We do not use third-party analytics SDKs for advertising tracking.</p>
+      <p>Crashlytics diagnostics may be linked to your user or account identifier so we can diagnose and fix problems affecting your account.</p>
+      <p>We do not intentionally log names, email addresses, phone numbers, free-text listing content, addresses, or GPS data in crash reports.</p>
+      <p>Conecto does not use analytics SDKs, advertising networks, cookies, IDFA, App Tracking Transparency tracking, cross-app tracking technologies, or advertising tracking domains. The hosted legal page is static and does not set cookies.</p>
     </div>
   </section>
 
   <section>
     <div class="section-inner" data-num="11">
       <h2>Location Information</h2>
-      <p>Conecto does not request access to your device's GPS or real-time location sensor.</p>
-      <p>The app does not request device location permission.</p>
-      <p>Location-related information in Conecto is based on information users enter or select when creating listings, such as city names, country names, origin, destination, intermediate stops, and route information.</p>
-      <p>Some city or place records may include reference coordinates used to support listing and route functionality. These coordinates are associated with places selected in the app and are not collected from your device's GPS sensor.</p>
+      <p>Conecto does not request access to your device's GPS, precise location, approximate location, or real-time location sensor.</p>
+      <p>The app does not request device location permission and does not perform background location tracking.</p>
+      <p>Location-related information in Conecto is based on information users enter or select when creating listings, such as city names, country names, origin, destination, intermediate stops, service areas, job areas, addresses, route information, or map links.</p>
+      <p>Some city, route, service, or place records may include reference coordinates used to support listing and route functionality. These coordinates are associated with entered or selected places and are not collected from your device's GPS sensor.</p>
     </div>
   </section>
 
@@ -523,12 +505,12 @@
       <ul>
         <li>create and manage your account;</li>
         <li>authenticate you securely;</li>
-        <li>publish, display, and manage listings;</li>
+        <li>publish, display, search, and manage listings;</li>
         <li>allow users to contact listing owners through listing contact details;</li>
         <li>save and sync favorites;</li>
         <li>store preferences;</li>
-        <li>provide subscription-based features;</li>
-        <li>verify subscription and purchase status;</li>
+        <li>provide subscription-based and purchase-based features;</li>
+        <li>verify subscription, purchase, promotion, and billing status;</li>
         <li>restore purchases;</li>
         <li>schedule local notifications;</li>
         <li>diagnose crashes and technical issues;</li>
@@ -549,7 +531,7 @@
         <li>to provide the app and its features;</li>
         <li>to perform our agreement with you;</li>
         <li>to manage your account and listings;</li>
-        <li>to provide subscription and purchase-related functionality;</li>
+        <li>to provide subscription, purchase, and promotion-related functionality;</li>
         <li>to maintain app security and prevent abuse;</li>
         <li>to diagnose and fix technical issues;</li>
         <li>to comply with legal obligations where applicable;</li>
@@ -565,10 +547,10 @@
       <p>These providers may process information according to their own privacy policies and contractual terms with us.</p>
       <p>We use service providers for purposes such as:</p>
       <ul>
-        <li>authentication;</li>
+        <li>authentication and sign-in;</li>
         <li>cloud data storage;</li>
         <li>backend processing;</li>
-        <li>subscription and purchase management;</li>
+        <li>subscription, purchase, promotion, and entitlement management;</li>
         <li>crash and error reporting;</li>
         <li>payment processing through app stores.</li>
       </ul>
@@ -582,7 +564,10 @@
       <p>Conecto may use the following third-party services:</p>
 
       <h3>Firebase Authentication</h3>
-      <p>Used for account creation and sign-in. Firebase Authentication may process account information such as your email address, display name, authentication tokens, and authentication provider.</p>
+      <p>Used for account creation and sign-in. Firebase Authentication may process account information such as your email address, display name, authentication tokens, authentication provider, and user ID.</p>
+
+      <h3>Google Sign-In and Sign in with Apple</h3>
+      <p>Used when you choose to sign in with Google or Apple. These providers may share account information, such as name and email address, according to your provider settings and their own policies.</p>
 
       <h3>Firestore / Firebase</h3>
       <p>Used for cloud data storage, such as account data, listings, favorites, preferences, and subscription-related access state.</p>
@@ -591,10 +576,10 @@
       <p>Used for crash and error reporting. Crashlytics may process technical diagnostic data and internal identifiers to help us identify and fix issues.</p>
 
       <h3>Google Cloud Functions</h3>
-      <p>Used for backend operations, including account deletion and subscription-related backend processing.</p>
+      <p>Used for backend operations, including account deletion, listing index maintenance, and subscription-related backend processing.</p>
 
       <h3>RevenueCat</h3>
-      <p>Used for subscription and purchase management. RevenueCat may process subscription status, product identifiers, store information, and RevenueCat App User IDs.</p>
+      <p>Used for subscription, purchase, promotion, entitlement, and billing-status management. RevenueCat may process subscription status, purchase receipts, transaction identifiers, product identifiers, store information, and RevenueCat App User IDs.</p>
 
       <h3>Apple App Store</h3>
       <p>Used for payment processing and subscription management on iOS. Apple processes payments according to Apple's own terms and privacy policies.</p>
@@ -610,8 +595,8 @@
     <div class="section-inner" data-num="16">
       <h2>Data Retention</h2>
       <p>We keep account information and listing data for as long as your account is active or as long as needed to provide the app.</p>
-      <p>Listings that you delete or deactivate may be removed from public display.</p>
-      <p>When you delete your account, we delete account-related data as described in the Account Deletion section below.</p>
+      <p>Listings that you delete, deactivate, or that expire may be removed from public display or public indexes where applicable.</p>
+      <p>When you delete your account, we delete app-owned account-related data as described in the Account Deletion section below, subject to technical, legal, security, and provider retention limits.</p>
       <p>We may retain certain limited records after account deletion where necessary for:</p>
       <ul>
         <li>legal compliance;</li>
@@ -623,7 +608,7 @@
         <li>enforcing our terms.</li>
       </ul>
       <p>For example, we may retain a technical deletion record containing limited metadata such as user ID, deletion status, deletion timestamps, and deletion counts. This record is retained for integrity and audit purposes.</p>
-      <p>Firebase, RevenueCat, Apple, and Google may retain information according to their own policies and legal obligations.</p>
+      <p>Apple, Google, RevenueCat, Firebase, Crashlytics, and similar providers may retain historical records according to their own policies and legal obligations.</p>
     </div>
   </section>
 
@@ -634,17 +619,19 @@
       <div class="nav-path">Profile → Delete Account</div>
       <p>Depending on your sign-in method, you may be asked to re-authenticate before deletion.</p>
       <p>Account deletion is permanent and cannot be undone.</p>
-      <p>When you delete your account, Conecto is designed to:</p>
+      <p>When you delete your account, Conecto is designed to remove app-owned data where applicable, including by:</p>
       <ol>
-        <li>cancel scheduled local notifications;</li>
-        <li>delete your public listing index entries across listing categories, such as rides, parcels, services, and jobs;</li>
-        <li>delete documents in your user account collection, including profile data, listings, and favorites;</li>
-        <li>delete your Firebase Authentication account;</li>
-        <li>clear your local Realm database;</li>
-        <li>clear local on-device preferences where applicable.</li>
+        <li>canceling scheduled local notifications;</li>
+        <li>deleting public listing index entries across listing categories, such as rides, parcels, services, and jobs;</li>
+        <li>deleting documents in your user account collection, including profile data, listings, favorites, and related app data;</li>
+        <li>deleting or attempting to delete your Firebase Authentication account;</li>
+        <li>clearing user-scoped local Realm data, such as your local listings, favorites, sync state, and billing cache;</li>
+        <li>clearing local on-device preferences where applicable;</li>
+        <li>signing you out locally and logging out of RevenueCat on the device where applicable.</li>
       </ol>
+      <p>Some static or shared local app data, such as cached place records, may remain because it is not specific to your account.</p>
       <p>Some limited records may be retained as described in the Data Retention section above.</p>
-      <p>Transaction records may also be retained by Apple, Google, and RevenueCat according to their own policies.</p>
+      <p>Historical records may also be retained by Apple, Google, RevenueCat, Firebase, Crashlytics, or similar providers according to their own policies and legal obligations.</p>
     </div>
   </section>
 
@@ -721,6 +708,7 @@
         <li>deactivate or delete individual listings from My Listings;</li>
         <li>turn off notifications from the Profile screen or your device settings;</li>
         <li>delete your account from <strong>Profile → Delete Account</strong>;</li>
+        <li>manage or cancel subscriptions through the App Store or Google Play;</li>
         <li>contact us for privacy-related questions or requests.</li>
       </ul>
       <p>Email: <a href="mailto:conecto.eu@gmail.com">conecto.eu@gmail.com</a></p>
@@ -756,3 +744,4 @@
 
 </body>
 </html>
+```
