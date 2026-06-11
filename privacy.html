@@ -1,22 +1,3 @@
-I did not modify any files.
-
-**Alignment Report**
-
-**Launch blockers**
-- None found after replacing the hosted text with the updated HTML below. The updated wording aligns with the repo’s current `PrivacyInfo.xcprivacy`: linked name/email/phone/user ID/user content, no tracking, and no device-location collection claim.
-
-**Should Fix Before Submission**
-- Current hosted wording should explicitly add: no GPS/device location permission, no background location tracking, no analytics SDK, no cookies, no ads, no IDFA/ATT tracking, and no tracking domains.
-- Current hosted deletion copy says “clear local Realm database”; the app actually clears user-scoped Realm data and local preferences while preserving static/shared data such as place cache.
-- Current in-app delete-account warning copy mentions App Store subscriptions but not Google Play. The hosted policy below covers both; the app copy should be fixed before Android submission.
-- Verify App Store Connect privacy answers include Crashlytics diagnostics if collected, since Crashlytics is active and linked to Firebase UID.
-
-**Nice-To-Have Wording Improvements**
-- Keep vendor retention language cautious for Apple, Google, RevenueCat, Firebase, and Crashlytics.
-- Clarify that billing diagnostics are Crashlytics breadcrumbs, not analytics/advertising tracking.
-- Make public listing/contact visibility explicit for rides, parcels, services, and jobs.
-
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -744,4 +725,4 @@ I did not modify any files.
 
 </body>
 </html>
-```
+
