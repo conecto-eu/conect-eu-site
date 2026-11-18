@@ -5,170 +5,136 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Conecto – Support</title>
   <style>
+    :root {
+      --brand: #24433e;
+      --brand-soft: #edf3f0;
+      --background: #f5f5f5;
+      --surface: #fff;
+      --text: #171b19;
+      --muted: #535e58;
+      --border: #dce4df;
+    }
+
+    * { box-sizing: border-box; }
+
     body {
-      font-family: Arial, sans-serif;
-      background: #f8f9fb;
-      color: #1a1a1a;
       margin: 0;
-      padding: 0;
-      line-height: 1.65;
+      background: var(--background);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.6;
     }
 
     .container {
-      max-width: 860px;
-      margin: 40px auto;
-      background: #ffffff;
-      padding: 40px 28px;
-      border-radius: 14px;
-      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.06);
+      max-width: 760px;
+      margin: 32px auto;
+      padding: 32px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.05);
     }
 
-    h1 {
-      font-size: 32px;
-      margin-bottom: 8px;
-      color: #0f172a;
-    }
+    h1, h2, h3 { line-height: 1.25; }
+    h1 { margin: 0 0 8px; color: var(--brand); font-size: 2rem; }
+    h2 { margin: 0 0 10px; font-size: 1.375rem; }
+    h3 { margin: 0 0 8px; font-size: 1.125rem; }
+    p { margin: 0 0 12px; }
 
-    h2 {
-      font-size: 24px;
-      margin-top: 32px;
-      margin-bottom: 14px;
-      color: #111827;
-    }
-
-    h3 {
-      font-size: 18px;
-      margin-top: 26px;
-      margin-bottom: 10px;
-      color: #1f2937;
-    }
-
-    p {
-      margin: 0 0 14px;
-    }
-
-    .subtitle {
-      color: #4b5563;
-      margin-bottom: 20px;
-    }
-
-    .updated {
-      display: inline-block;
-      background: #eef2ff;
-      color: #3730a3;
-      padding: 8px 12px;
-      border-radius: 999px;
-      font-size: 14px;
-      margin-bottom: 20px;
-    }
+    .intro, .footer { color: var(--muted); }
+    .contact { margin: 20px 0 28px; }
 
     .contact-box {
-      background: #f3f4f6;
+      display: inline-block;
+      max-width: 100%;
+      padding: 12px 16px;
+      background: var(--brand-soft);
       border-radius: 12px;
-      padding: 18px;
-      margin-top: 12px;
+      overflow-wrap: anywhere;
     }
 
-    .faq-box {
-      background: #f9fafb;
-      border-radius: 12px;
-      padding: 18px;
-      margin-top: 12px;
-      border: 1px solid #e5e7eb;
-    }
+    a { color: var(--brand); font-weight: 600; text-underline-offset: 0.14em; }
+    a:hover { text-decoration-thickness: 2px; }
+    a:focus-visible { outline: 2px solid var(--brand); outline-offset: 4px; }
 
-    a {
-      color: #0f766e;
-      font-weight: bold;
-    }
+    .faq-item { padding: 16px 0; border-bottom: 1px solid var(--border); }
+    .faq-item p:last-child, .footer p:last-child { margin-bottom: 0; }
+    .footer { margin-top: 20px; font-size: 0.875rem; }
 
-    a:hover {
-      text-decoration-thickness: 2px;
-    }
-
-    .footer {
-      margin-top: 32px;
-      font-size: 14px;
-      color: #6b7280;
-      border-top: 1px solid #e5e7eb;
-      padding-top: 18px;
+    @media (max-width: 824px) {
+      .container { margin: 16px; }
     }
 
     @media (max-width: 640px) {
-      .container {
-        margin: 16px;
-        padding: 24px 18px;
-      }
-
-      h1 {
-        font-size: 28px;
-      }
-
-      h2 {
-        font-size: 22px;
-      }
+      .container { padding: 22px 18px; }
+      h1 { font-size: 1.75rem; }
     }
   </style>
 </head>
 <body>
   <main class="container">
-    <h1>Conecto</h1>
-    <p class="subtitle">Support for the Conecto mobile app</p>
-    <div class="updated">
-      <strong>Last updated</strong> <time datetime="2026-11-18">November 18, 2026</time>
-    </div>
+    <h1>Conecto Support</h1>
+    <p class="intro">Get help with your account, report an issue, or share feedback.</p>
 
-    <h2>Support</h2>
-    <p>Email us for help with your account, technical issues, or feedback.</p>
-    <div class="contact-box">
-      <a href="mailto:conecto.eu@gmail.com">conecto.eu@gmail.com</a>
-    </div>
+    <section class="contact" aria-labelledby="contact-heading">
+      <h2 id="contact-heading">Contact support</h2>
+      <a class="contact-box" href="mailto:conecto.eu@gmail.com">conecto.eu@gmail.com</a>
+    </section>
 
-    <h2>Frequently Asked Questions</h2>
-    <div class="faq-box">
-      <h3>How can I report a listing?</h3>
-      <p>
-        Open the details of a ride, parcel, service, or job listing posted by someone else.
-        Tap <strong>Report this listing</strong> to open an email draft with the listing
-        reference. Add the reason for your report and send the email.
-      </p>
-      <p>
-        If your email app cannot open, Conecto displays our support address and the listing
-        reference. Copy the reference into an email to support and tell us what happened.
-      </p>
+    <section aria-labelledby="faq-heading">
+      <h2 id="faq-heading">Frequently asked questions</h2>
 
-      <h3>How can I block or unblock a user?</h3>
-      <p>
-        Open one of their listings, tap <strong>Block this user</strong>, and confirm.
-        This hides their listings for you on the device you are using.
-        To unblock them, go to <strong>Profile → Blocked users</strong>.
-      </p>
+      <div class="faq-item">
+        <h3>How can I report a listing?</h3>
+        <p>
+          Open a ride, parcel, service, or job listing posted by someone else.
+          Tap <strong>Report this listing</strong> to open an email draft with the listing reference.
+          Add the reason for your report and send the email.
+        </p>
+        <p>
+          If the email app cannot open, Conecto displays the support address and listing reference.
+          Include that reference and a description of the issue in an email to support.
+        </p>
+      </div>
 
-      <h3>How can I delete my account?</h3>
-      <p>
-        Sign in to Conecto. Open <strong>Profile</strong>, scroll to the
-        <strong>Account</strong> section, and tap <strong>Delete Account</strong>.
-        Follow the prompts to confirm.
-      </p>
-      <p>
-        If you have an active subscription, cancel it separately in your App Store
-        or Google Play subscription settings to stop future renewals.
-        For help if you cannot sign in, see the
-        <a href="https://conect-eu-app.web.app/delete-account.html">account deletion instructions</a>.
-      </p>
+      <div class="faq-item">
+        <h3>How can I block or unblock a user?</h3>
+        <p>
+          Open one of their listings, tap <strong>Block this user</strong>, and confirm.
+          This hides their listings for you on the device you are using.
+          To unblock them, go to <strong>Profile → Blocked users</strong>.
+        </p>
+      </div>
 
-      <h3>How can I send feedback or report a technical issue?</h3>
-      <p>
-        In Conecto, go to <strong>Profile → Help &amp; feedback</strong>.
-        Choose <strong>Send feedback</strong> for suggestions or
-        <strong>Report a problem</strong> for a technical issue.
-        You can also email our support team directly.
-      </p>
-    </div>
+      <div class="faq-item">
+        <h3>How can I delete my account?</h3>
+        <p>
+          Sign in to Conecto. Open <strong>Profile</strong>, scroll to the
+          <strong>Account</strong> section, and tap <strong>Delete Account</strong>.
+          Follow the prompts to confirm.
+        </p>
+        <p>
+          To stop future subscription renewals, cancel your subscription separately
+          in your App Store or Google Play subscription settings.
+          If you cannot sign in, see the
+          <a href="https://conect-eu-app.web.app/delete-account.html">account deletion instructions</a>.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3>How can I send feedback or report a technical issue?</h3>
+        <p>
+          Go to <strong>Profile → Help &amp; feedback</strong>.
+          Choose <strong>Send feedback</strong> for suggestions or
+          <strong>Report a problem</strong> for a technical issue.
+          You can also email our support team directly.
+        </p>
+      </div>
+    </section>
 
     <footer class="footer">
       <p><a href="https://conecto-eu.github.io/conect-eu-site/privacy.html">Privacy Policy</a></p>
-      <p>© 2026 Conecto. All rights reserved.</p>
+      <p>Last updated <time datetime="2026-11-18">November 18, 2026</time> · © 2026 Conecto</p>
     </footer>
   </main>
 </body>
